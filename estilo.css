@@ -1,0 +1,478 @@
+/* ================================
+   PALETA — Azul Real & Cian Premium
+================================ */
+
+:root {
+    --primario:   #2563EB;
+    --cian:       #06B6D4;
+    --profundo:   #4F46E5;
+    --verde:      #10B981;
+
+    --tinta:      #0F172A;
+    --apagado:    #475569;
+    --tenue:      #94A3B8;
+
+    --blanco:     #FFFFFF;
+    --campo:      #F8FAFC;
+    --borde:      #E2E8F0;
+    --borde-foco: #BAE6FD;
+
+    --titulo: "Outfit", "Segoe UI", Arial, sans-serif;
+    --texto:  "Plus Jakarta Sans", "Segoe UI", Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 24px 16px;
+
+    font-family: var(--texto);
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--tinta);
+
+    background:
+        radial-gradient(circle at 12% 8%, rgba(6, 182, 212, 0.22), transparent 42%),
+        radial-gradient(circle at 88% 92%, rgba(79, 70, 229, 0.22), transparent 45%),
+        linear-gradient(160deg, #EFF6FF 0%, #F8FAFC 100%);
+    background-attachment: fixed;
+}
+
+:focus-visible {
+    outline: 3px solid var(--primario);
+    outline-offset: 3px;
+}
+
+
+/* ================================
+   TARJETA PRINCIPAL
+================================ */
+
+.tarjeta {
+    width: 100%;
+    max-width: 445px;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    padding: 28px 22px 22px;
+
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 28px;
+    box-shadow: 
+        0 25px 60px -12px rgba(15, 23, 42, 0.14),
+        0 0 0 1px rgba(14, 165, 233, 0.08);
+}
+
+.cabecera {
+    text-align: center;
+}
+
+.etiqueta-sup {
+    display: inline-block;
+    padding: 4px 12px;
+    margin-bottom: 8px;
+    background: linear-gradient(90deg, rgba(37, 99, 235, 0.1), rgba(6, 182, 212, 0.15));
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    border-radius: 999px;
+    color: var(--primario);
+    font-family: var(--titulo);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.cabecera h1 {
+    font-family: var(--titulo);
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+
+    background: linear-gradient(90deg, var(--profundo), var(--primario), var(--cian));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.cabecera p {
+    margin-top: 6px;
+    color: var(--apagado);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+/* ================================
+   CAJAS DE PASOS
+================================ */
+
+.paso {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+
+    padding: 18px 16px;
+
+    background: var(--campo);
+    border: 2px solid var(--borde);
+    border-radius: 20px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.paso:hover {
+    border-color: var(--borde-foco);
+    box-shadow: 0 8px 20px rgba(14, 165, 233, 0.06);
+}
+
+.paso-cabeza {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.numero {
+    flex-shrink: 0;
+    width: 35px;
+    height: 35px;
+    display: grid;
+    place-items: center;
+
+    background: linear-gradient(135deg, var(--profundo), var(--cian));
+    border-radius: 12px;
+    box-shadow: 0 6px 14px rgba(37, 99, 235, 0.28);
+
+    color: var(--blanco);
+    font-family: var(--titulo);
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.paso h2 {
+    flex: 1;
+    font-family: var(--titulo);
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--tinta);
+}
+
+.tilde {
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+
+    background: var(--verde);
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.35);
+
+    color: var(--blanco);
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.tilde[hidden] {
+    display: none;
+}
+
+.paso-texto {
+    color: var(--apagado);
+    font-size: 14.5px;
+}
+
+.paso-texto strong {
+    color: var(--tinta);
+    font-weight: 700;
+}
+
+
+/* ================================
+   PASO 1 — ENLACE Y BOTÓN
+================================ */
+
+.enlace {
+    width: 100%;
+    padding: 13px 14px;
+
+    background: var(--blanco);
+    border: 2px dashed #CBD5E1;
+    border-radius: 13px;
+
+    color: var(--primario);
+    font-family: var(--texto);
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.boton {
+    width: 100%;
+    padding: 15px 18px;
+
+    background: linear-gradient(135deg, var(--profundo), var(--primario), var(--cian));
+    border: none;
+    border-radius: 14px;
+
+    color: var(--blanco);
+    font-family: var(--titulo);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+
+    cursor: pointer;
+    box-shadow: 0 10px 24px rgba(37, 99, 235, 0.35);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.boton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(37, 99, 235, 0.45);
+}
+
+.boton:active {
+    transform: translateY(0);
+}
+
+.aviso {
+    min-height: 20px;
+    color: var(--verde);
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: 0.25s;
+}
+
+.aviso.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ================================
+   PASO 2 — TUTORIAL GIF
+================================ */
+
+.media-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-height: 120px;
+    padding: 12px;
+    overflow: hidden;
+
+    background: var(--blanco);
+    border: 2px solid var(--borde);
+    border-radius: 15px;
+
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.media-box:hover {
+    border-color: var(--cian);
+    box-shadow: 0 6px 18px rgba(6, 182, 212, 0.15);
+}
+
+.media {
+    display: none;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.media.visible {
+    display: block;
+}
+
+.media-lupa {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+
+    padding: 6px 13px;
+
+    background: linear-gradient(135deg, var(--profundo), var(--primario));
+    border-radius: 999px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.3);
+
+    color: var(--blanco);
+    font-family: var(--texto);
+    font-size: 11.5px;
+    font-weight: 700;
+}
+
+.media-vacia[hidden] {
+    display: none;
+}
+
+.media-vacia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    min-height: 96px;
+
+    color: var(--apagado);
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.media-vacia small {
+    color: var(--tenue);
+    font-size: 12px;
+    font-weight: 400;
+}
+
+
+/* ================================
+   PASO 3 — ILUSTRACIÓN SVG
+================================ */
+
+.ejemplo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+}
+
+.panel {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 14px 32px rgba(15, 23, 42, 0.28);
+}
+
+.ejemplo figcaption {
+    max-width: 34ch;
+    color: var(--apagado);
+    font-size: 12.5px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.4;
+}
+
+
+/* ================================
+   PIE DE PÁGINA
+================================ */
+
+.footer {
+    text-align: center;
+}
+
+.footer p {
+    color: var(--tenue);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* ================================
+   VISOR MODAL DEL TUTORIAL
+================================ */
+
+.visor {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 14px;
+
+    background: rgba(7, 11, 25, 0.85);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.visor[hidden] {
+    display: none;
+}
+
+.visor-caja {
+    width: 100%;
+    max-width: 1000px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.visor-scroll {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 14px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.visor-media {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.visor-pista {
+    display: none;
+    color: var(--blanco);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.visor-cerrar {
+    padding: 13px 30px;
+
+    background: var(--blanco);
+    border: none;
+    border-radius: 999px;
+
+    color: var(--tinta);
+    font-family: var(--titulo);
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 820px) {
+    .visor-media {
+        width: 760px;
+        max-width: none;
+    }
+
+    .visor-pista {
+        display: block;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}

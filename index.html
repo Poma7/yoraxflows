@@ -1,0 +1,192 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>3 Pasos y Listo</title>
+    <meta name="description" content="Copiá el enlace, pegalo en otra pestaña y completá los 3 pasos que aparecen adentro.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+
+    <main class="tarjeta">
+
+        <header class="cabecera">
+            <h1>3 pasos y listo</h1>
+            <p>Seguilos en orden. Es rápido.</p>
+        </header>
+
+        <!-- ============ PASO 1 ============ -->
+        <section class="paso">
+            <div class="paso-cabeza">
+                <span class="numero">1</span>
+                <h2>Copiá el enlace</h2>
+                <span class="tilde" id="tildePaso1" hidden>✓</span>
+            </div>
+
+            <p class="paso-texto">Tocá el botón y el enlace queda copiado.</p>
+
+            <input type="text" id="enlaceInput" class="enlace" readonly
+                   value="https://premio77top.requisitoshoy.com/">
+            <button type="button" id="botonCopiar" class="boton">Copiar enlace</button>
+            <p id="mensajeCopiado" class="aviso" role="status">¡Listo, enlace copiado!</p>
+        </section>
+
+        <!-- ============ PASO 2 ============ -->
+        <section class="paso">
+            <div class="paso-cabeza">
+                <span class="numero">2</span>
+                <h2>Pegalo en una pestaña nueva</h2>
+            </div>
+
+            <p class="paso-texto">Abrí una pestaña nueva del navegador y pegá el enlace ahí. Así:</p>
+
+            <button type="button" class="media-box" id="abrirTutorial">
+                <img src="imagenes/tutorial.gif?v=2" alt="Cómo pegar el enlace en la barra del navegador" class="media" id="tutorial">
+                <div class="media-vacia" id="mediaVacia">
+                    <span>Poné acá tu tutorial</span>
+                    <small>imagenes/tutorial.gif</small>
+                </div>
+                <span class="media-lupa">Ver en grande</span>
+            </button>
+        </section>
+
+        <!-- ============ PASO 3 ============ -->
+        <section class="paso">
+            <div class="paso-cabeza">
+                <span class="numero">3</span>
+                <h2>Completá los 3 pasos de adentro</h2>
+            </div>
+
+            <p class="paso-texto">
+                Al entrar te van a aparecer <strong>otros 3 pasos</strong>.
+                Completalos uno por uno ahí adentro para terminar.
+            </p>
+
+            <figure class="ejemplo">
+                <!-- Ilustración de los 3 pasos que aparecen al abrir el enlace -->
+                <svg class="panel" viewBox="0 0 800 450" role="img"
+                     aria-label="Tres carteles con luz naranja que dicen Paso 1, Paso 2 y Paso 3, junto a un portapapeles con tildes">
+
+                    <defs>
+                        <radialGradient id="brasa" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#FF6A00" stop-opacity="0.55"/>
+                            <stop offset="100%" stop-color="#FF6A00" stop-opacity="0"/>
+                        </radialGradient>
+                        <filter id="neon" x="-60%" y="-60%" width="220%" height="220%">
+                            <feGaussianBlur stdDeviation="7" result="b"/>
+                            <feMerge>
+                                <feMergeNode in="b"/>
+                                <feMergeNode in="b"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+
+                    <!-- Fondo -->
+                    <rect x="0" y="0" width="800" height="450" rx="16" fill="#0C0C0E"/>
+                    <ellipse cx="120" cy="230" rx="200" ry="220" fill="url(#brasa)"/>
+                    <ellipse cx="700" cy="180" rx="230" ry="240" fill="url(#brasa)"/>
+
+                    <!-- Esquirlas de fuego -->
+                    <g fill="#FF6A00" opacity="0.75">
+                        <polygon points="0,40 70,90 26,120 96,170 0,150"/>
+                        <polygon points="800,20 720,70 780,96 706,150 800,160"/>
+                        <polygon points="742,240 800,270 744,300 800,330 720,320"/>
+                        <polygon points="120,430 180,396 168,450 108,450"/>
+                    </g>
+                    <g fill="#FFC400" opacity="0.6">
+                        <polygon points="742,30 776,60 736,80"/>
+                        <polygon points="24,330 62,352 22,376"/>
+                    </g>
+
+                    <!-- Portapapeles -->
+                    <g stroke="#FFFFFF" fill="none" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
+                        <rect x="40" y="168" width="156" height="216" rx="18"/>
+                        <rect x="92" y="146" width="52" height="34" rx="9" fill="#0C0C0E"/>
+                        <circle cx="118" cy="140" r="11"/>
+                        <polyline points="70,232 80,242 98,220"/>
+                        <polyline points="70,288 80,298 98,276"/>
+                        <polyline points="70,344 80,354 98,332"/>
+                    </g>
+                    <g fill="#FFFFFF">
+                        <rect x="112" y="226" width="62" height="10" rx="5"/>
+                        <rect x="112" y="282" width="62" height="10" rx="5"/>
+                        <rect x="112" y="338" width="62" height="10" rx="5"/>
+                    </g>
+
+                    <!-- Cartel Paso 1 -->
+                    <g>
+                        <rect x="212" y="62" width="196" height="252" rx="12" fill="#101013"
+                              stroke="#FF6A00" stroke-width="5" filter="url(#neon)"/>
+                        <text x="310" y="118" fill="#FFC400" text-anchor="middle"
+                              font-family="Fredoka, sans-serif" font-size="34" font-weight="700">PASO 1</text>
+                        <g fill="#6E6E78">
+                            <rect x="236" y="144" width="148" height="13" rx="6"/>
+                            <rect x="236" y="172" width="148" height="13" rx="6"/>
+                            <rect x="236" y="200" width="120" height="13" rx="6"/>
+                            <rect x="236" y="228" width="148" height="13" rx="6"/>
+                        </g>
+                        <rect x="236" y="262" width="148" height="30" rx="7" fill="#FFC400"/>
+                    </g>
+
+                    <!-- Cartel Paso 2 -->
+                    <g>
+                        <rect x="356" y="104" width="196" height="252" rx="12" fill="#101013"
+                              stroke="#FF6A00" stroke-width="5" filter="url(#neon)"/>
+                        <text x="454" y="160" fill="#FFC400" text-anchor="middle"
+                              font-family="Fredoka, sans-serif" font-size="34" font-weight="700">PASO 2</text>
+                        <g fill="#6E6E78">
+                            <rect x="380" y="186" width="148" height="13" rx="6"/>
+                            <rect x="380" y="214" width="148" height="13" rx="6"/>
+                            <rect x="380" y="242" width="112" height="13" rx="6"/>
+                            <rect x="380" y="270" width="148" height="13" rx="6"/>
+                        </g>
+                        <rect x="380" y="304" width="148" height="30" rx="7" fill="#FFC400"/>
+                    </g>
+
+                    <!-- Cartel Paso 3 -->
+                    <g>
+                        <rect x="500" y="146" width="196" height="252" rx="12" fill="#101013"
+                              stroke="#FF6A00" stroke-width="5" filter="url(#neon)"/>
+                        <text x="598" y="202" fill="#FFC400" text-anchor="middle"
+                              font-family="Fredoka, sans-serif" font-size="34" font-weight="700">PASO 3</text>
+                        <g fill="#6E6E78">
+                            <rect x="524" y="228" width="148" height="13" rx="6"/>
+                            <rect x="524" y="256" width="148" height="13" rx="6"/>
+                            <rect x="524" y="284" width="126" height="13" rx="6"/>
+                            <rect x="524" y="312" width="148" height="13" rx="6"/>
+                        </g>
+                        <rect x="524" y="346" width="148" height="30" rx="7" fill="#FFC400"/>
+                    </g>
+                </svg>
+                <figcaption>Así se ven los pasos que te aparecen adentro</figcaption>
+            </figure>
+        </section>
+
+        <footer class="footer">
+            <p>© 2026</p>
+        </footer>
+
+    </main>
+
+    <!-- ============ TUTORIAL AMPLIADO ============ -->
+    <div class="visor" id="visor" hidden>
+        <div class="visor-caja" role="dialog" aria-label="Tutorial ampliado" aria-modal="true">
+            <div class="visor-scroll">
+                <img src="imagenes/tutorial.gif?v=2" alt="Cómo pegar el enlace en la barra del navegador" class="visor-media">
+            </div>
+            <p class="visor-pista">Deslizá el tutorial para verlo completo →</p>
+            <button type="button" class="visor-cerrar" id="cerrarTutorial">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
